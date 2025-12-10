@@ -10,6 +10,13 @@ navButtons.forEach(btn => {
     btn.addEventListener('click', () => {
         const target = btn.dataset.target;
         
+        // Toggle immersive mode for diagram section
+        if (target === 'diagrama') {
+            document.body.classList.add('immersive-mode');
+        } else {
+            document.body.classList.remove('immersive-mode');
+        }
+
         // Actualizar botones
         navButtons.forEach(b => b.classList.toggle('active', b === btn));
         
@@ -77,15 +84,15 @@ window.animarCondicional = function(condicion, textoCondicion) {
     container.className = 'flow-container';
     
     // Nodo Inicio
-    container.innerHTML = `
+        container.innerHTML = `
         <div class="flow-node">Inicio</div>
         <div style="height: 20px; border-left: 2px solid #64748b;"></div>
         
         <!-- Etiqueta de la condición (fuera del rombo) -->
         <div class="fc-condition-label" style="margin-bottom: 0;">${textoCondicion || 'Condición'}</div>
         
-        <!-- Rombo de decisión -->
-        <div class="flow-diamond">
+        <!-- Rombo de decisión (clase unificada fc-decision) -->
+        <div class="fc-decision" style="width: 120px; height: 84px;">
             <span>?</span>
         </div>
         
@@ -316,6 +323,9 @@ function generarDiagrama(code, area) {
             
             const decision = document.createElement('div');
             decision.className = 'fc-decision';
+            // Forzar tamaño mínimo para el rombo en el generador
+            decision.style.minWidth = '110px';
+            decision.style.minHeight = '84px';
             decision.style.animationDelay = getDelay();
             decision.innerHTML = `<span>?</span>`;
             decision.title = condition;
@@ -382,6 +392,8 @@ function generarDiagrama(code, area) {
 
              const decision = document.createElement('div');
              decision.className = 'fc-decision fc-loop';
+            decision.style.minWidth = '110px';
+            decision.style.minHeight = '84px';
              decision.style.animationDelay = getDelay();
              decision.innerHTML = `<span>WHILE</span>`;
              decisionWrapper.appendChild(decision);
@@ -424,6 +436,8 @@ function addNode(parent, text, type, delay = '0s') {
     if (type === 'decision') {
          const d = document.createElement('div');
          d.className = 'fc-decision';
+            d.style.minWidth = '110px';
+            d.style.minHeight = '84px';
          d.style.animationDelay = delay;
          d.innerHTML = `<span>${text}</span>`;
          parent.appendChild(d);

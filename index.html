@@ -397,38 +397,9 @@ animarFuncion("saludar", ["Ana"], res2);
                         <h2>Generar diagrama</h2>
                         <p class="hint">Escribe tu código y verás cómo se transforma mágicamente en un diagrama visual.</p>
                     </div>
-                    <button class="btn run-btn" data-run="diagrama">▶ Generar Diagrama</button>
                 </div>
-                <div class="panel-body">
-                    <div class="editor">
-                        <label for="code-diagrama">Tu Código JavaScript</label>
-                        <div class="guide-box">
-                            <strong>Guía rápida:</strong>
-                            <ul>
-                                <li>Usa <code>let</code> o <code>const</code> para declarar variables.</li>
-                                <li>Usa <code>if (condicion) { ... } else { ... }</code> para decisiones.</li>
-                                <li>Usa <code>while (condicion) { ... }</code> para ciclos.</li>
-                                <li>Usa <code>console.log(...)</code> para salidas.</li>
-                            </ul>
-                        </div>
-                        <textarea id="code-diagrama" class="code" spellcheck="false" style="height: 200px;">// Ejemplo:
-let edad = 18;
-
-if (edad >= 18) {
-    console.log("Es mayor de edad");
-} else {
-    console.log("Es menor de edad");
-}
-
-console.log("Fin del programa");
-</textarea>
-                    </div>
-                    <div class="visual" id="visual-diagrama">
-                        <div class="viz-title">Diagrama Generado</div>
-                        <div class="viz-area" data-visual="diagrama" style="justify-content: center; align-items: center; display: flex;">
-                            <p class="placeholder-text">Ejecuta el código para ver el diagrama</p>
-                        </div>
-                    </div>
+                <div class="panel-body" style="padding: 0; height: 100%; overflow: hidden;">
+                    <iframe src="diagram-app/dist/index.html" style="width: 100%; height: 100%; border: none; display: block;" title="Generador de Diagramas"></iframe>
                 </div>
             </section>
         </main>
