@@ -70,7 +70,7 @@
 }
 
 .interactive-card:hover .fc-decision {
-    transform: rotate(45deg) scale(1.15);
+    transform: scale(1.15);
     background: #d1fae5;
     border-color: #059669;
 }

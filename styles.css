@@ -258,11 +258,12 @@ h2 { margin: 0 0 4px; font-size: 1.4rem; letter-spacing: -0.01em; }
 }
 
 .flow-diamond {
-    width: 60px;
-    height: 60px;
+    /* Rombo creado con clip-path para evitar rotaciones y problemas de texto desalineado */
+    width: 120px;
+    height: 80px;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
     border: 2px solid #059669;
-    transform: rotate(45deg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -271,9 +272,8 @@ h2 { margin: 0 0 4px; font-size: 1.4rem; letter-spacing: -0.01em; }
 }
 
 .flow-diamond span {
-    transform: rotate(-45deg);
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 700;
     text-align: center;
     color: #065f46;
 }
@@ -342,20 +342,23 @@ h2 { margin: 0 0 4px; font-size: 1.4rem; letter-spacing: -0.01em; }
 
 /* Estilo para pasos que son condiciones (While) */
 .loop-step.condition-step {
-    border-radius: 0;
-    transform: rotate(45deg);
-    margin: 0 10px; /* Espacio extra por la rotación */
+    /* Pequeño rombo para representar la condición en un ciclo */
     width: 36px;
     height: 36px;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    border-radius: 4px;
 }
 
 .loop-step.condition-step span {
-    transform: rotate(-45deg);
     display: block;
 }
 
 .loop-step.condition-step.current {
-    transform: rotate(45deg) scale(1.1);
+    transform: scale(1.1);
 }
 
 /* Ciclos anidados: Grid */
@@ -587,11 +590,14 @@ h2 { margin: 0 0 4px; font-size: 1.4rem; letter-spacing: -0.01em; }
 }
 
 .fc-decision {
-    width: 80px;
-    height: 80px;
+    /* Usamos clip-path para crear rombo sin rotación del contenido */
+    min-width: 110px;
+    min-height: 84px;
+    width: auto;
+    height: auto;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
     border: 2px solid #059669;
-    transform: rotate(45deg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -602,13 +608,12 @@ h2 { margin: 0 0 4px; font-size: 1.4rem; letter-spacing: -0.01em; }
 }
 
 .fc-decision span {
-    transform: rotate(-45deg);
-    font-size: 0.75rem;
-    font-weight: bold;
+    font-size: 0.9rem;
+    font-weight: 700;
     text-align: center;
     color: #065f46;
     font-family: var(--mono);
-    max-width: 50px;
+    max-width: 80px;
     line-height: 1.1;
 }
 
@@ -635,11 +640,12 @@ h2 { margin: 0 0 4px; font-size: 1.4rem; letter-spacing: -0.01em; }
 .fc-branches::before {
     content: '';
     position: absolute;
-    top: -20px;
+    /* Ajustado para el nuevo tamaño del rombo */
+    top: -36px;
     left: 50%;
     transform: translateX(-50%);
     width: 220px;
-    height: 40px;
+    height: 44px;
     border-left: 2px solid #64748b;
     border-right: 2px solid #64748b;
     border-top: 2px solid #64748b;
@@ -745,3 +751,72 @@ h2 { margin: 0 0 4px; font-size: 1.4rem; letter-spacing: -0.01em; }
     .code { min-height: 200px; }
     .viz-area { min-height: 250px; }
 }
+
+/* ===============================
+   Modo Inmersivo (Sección Diagrama)
+   =============================== */
+body.immersive-mode {
+    overflow: hidden; /* Prevent body scroll */
+}
+
+body.immersive-mode .layout {
+    height: 100vh;
+    overflow: hidden;
+}
+
+body.immersive-mode .main {
+    padding: 0;
+    max-width: none;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: block; /* Override flex/grid if necessary */
+}
+
+body.immersive-mode .topbar {
+    display: none !important;
+}
+
+body.immersive-mode #diagrama {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw; /* Force full viewport width relative to main */
+    height: 100vh;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+body.immersive-mode #diagrama .panel-header {
+    display: none !important;
+}
+
+body.immersive-mode #diagrama .panel-body {
+    flex: 1;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+body.immersive-mode #diagrama .panel-body iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+    display: block;
+}
+
+body.immersive-mode .sidebar {
+    z-index: 50;
+}
+
