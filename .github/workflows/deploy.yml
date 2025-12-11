@@ -29,7 +29,10 @@ jobs:
           cache-dependency-path: diagram-app/package-lock.json
 
       - name: Install dependencies
-        run: cd diagram-app && npm ci
+        run: cd diagram-app && npm install
+
+      - name: Check node_modules
+        run: cd diagram-app && ls -R node_modules/lucide-react || echo "lucide-react not found"
 
       - name: Build
         run: cd diagram-app && npm run build
