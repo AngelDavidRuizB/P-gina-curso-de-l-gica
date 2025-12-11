@@ -109,7 +109,7 @@ const DiagramGenerator = () => {
         <div className="p-4 bg-[#252526] border-t border-slate-700">
           <button
             onClick={handleGenerate}
-            className="w-full py-3 px-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-md transition-colors flex items-center justify-center gap-2 shadow-lg"
+            className="w-full py-3 px-4 bg-primary hover:bg-primary/80 text-white font-semibold rounded-md transition-colors flex items-center justify-center gap-2 shadow-lg"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />

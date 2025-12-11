@@ -61,7 +61,43 @@ const ForLoop = () => {
           <span className="font-bold uppercase tracking-wider text-sm">Concepto 03</span>
         </div>
         <h2 className="text-3xl font-bold text-white mb-2">Ciclo For</h2>
-        <p className="text-slate-400">Domina la repetición de tareas controlada.</p>
+        <p className="text-slate-400 mb-6">Domina la repetición de tareas controlada.</p>
+
+        <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 text-slate-300 space-y-4 shadow-lg">
+            <div>
+                <h3 className="text-xl font-semibold text-white mb-2">¿Qué es un Ciclo For?</h3>
+                <p className="leading-relaxed">
+                    Imagina que tienes que dar 5 vueltas a una cancha. Sabes exactamente cuántas vueltas son: 1, 2, 3, 4 y 5. 
+                    El <strong>Ciclo For</strong> es la herramienta perfecta para situaciones donde sabes de antemano cuántas veces quieres repetir una acción.
+                </p>
+            </div>
+            
+            <div>
+                <p className="leading-relaxed">
+                    Tiene 3 partes clave que funcionan como un contador:
+                </p>
+                <ol className="list-decimal list-inside mt-2 space-y-1 ml-2 text-slate-400">
+                    <li><strong>Inicio:</strong> Donde empieza el contador (ej: <code className="text-orange-400">let i = 0</code>).</li>
+                    <li><strong>Condición:</strong> Hasta cuándo sigue (ej: <code className="text-orange-400">i &lt; 5</code>).</li>
+                    <li><strong>Actualización:</strong> Cómo cambia en cada paso (ej: <code className="text-orange-400">i++</code>, que significa sumar 1).</li>
+                </ol>
+            </div>
+
+            <div className="bg-slate-900/50 p-4 rounded-lg border border-slate-700/50">
+                <h4 className="font-medium text-white mb-3 flex items-center gap-2">
+                    <span className="w-1 h-6 bg-blue-500 rounded-full"></span>
+                    Ejemplo concreto:
+                </h4>
+                <div className="bg-slate-800 p-3 rounded border border-slate-700">
+                    <div className="text-xs text-slate-500 uppercase mb-1 font-bold">Contar hasta 5</div>
+                    <code className="text-sm block font-mono text-slate-300">
+                        <span className="text-purple-400">for</span> (let i = 1; i &lt;= 5; i++) {'{'}<br/>
+                        &nbsp;&nbsp;console.log(<span className="text-green-400">"Vuelta número: "</span> + i);<br/>
+                        {'}'}
+                    </code>
+                </div>
+            </div>
+        </div>
       </header>
 
       <div className="grid lg:grid-cols-2 gap-6 flex-1 min-h-0">
@@ -110,12 +146,12 @@ const ForLoop = () => {
         </div>
 
         {/* Visualization Column */}
-        <div className="flex flex-col bg-slate-900 rounded-xl overflow-hidden border border-slate-800 shadow-xl">
+        <div className="flex flex-col bg-secondary rounded-xl overflow-hidden border border-slate-800 shadow-xl">
           <div className="px-4 py-3 bg-slate-800/50 border-b border-slate-800">
             <span className="text-slate-300 font-medium text-sm">Pista de Iteraciones</span>
           </div>
           
-          <div className="flex-1 p-6 bg-slate-900/50 relative overflow-auto">
+          <div className="flex-1 p-6 bg-secondary/50 relative overflow-auto">
             {steps.length === 0 ? (
               <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-600">
                 <Repeat size={48} className="mb-4 opacity-20" />

@@ -68,7 +68,41 @@ const WhileLoop = () => {
           <span className="font-bold uppercase tracking-wider text-sm">Concepto 04</span>
         </div>
         <h2 className="text-3xl font-bold text-white mb-2">Ciclo While</h2>
-        <p className="text-slate-400">Repite acciones mientras se cumpla una condición.</p>
+        <p className="text-slate-400 mb-6">Repite acciones mientras se cumpla una condición.</p>
+
+        <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 text-slate-300 space-y-4 shadow-lg">
+            <div>
+                <h3 className="text-xl font-semibold text-white mb-2">¿Qué es un Ciclo While?</h3>
+                <p className="leading-relaxed">
+                    A diferencia del ciclo For (donde sabes cuántas veces repetir), el <strong>Ciclo While</strong> (Mientras) se usa cuando no sabes exactamente cuándo terminará la tarea, 
+                    pero sí sabes qué condición debe cumplirse para continuar.
+                </p>
+            </div>
+            
+            <div>
+                <p className="leading-relaxed">
+                    Piensa en comer: sigues comiendo <strong>mientras</strong> tengas hambre. No sabes si serán 10 o 20 bocados, pero la condición es "tener hambre".
+                    El ciclo se repite una y otra vez hasta que la condición se vuelve falsa.
+                </p>
+            </div>
+
+            <div className="bg-slate-900/50 p-4 rounded-lg border border-slate-700/50">
+                <h4 className="font-medium text-white mb-3 flex items-center gap-2">
+                    <span className="w-1 h-6 bg-blue-500 rounded-full"></span>
+                    Ejemplo concreto:
+                </h4>
+                <div className="bg-slate-800 p-3 rounded border border-slate-700">
+                    <div className="text-xs text-slate-500 uppercase mb-1 font-bold">Juego</div>
+                    <code className="text-sm block font-mono text-slate-300">
+                        <span className="text-purple-400">while</span> (vidas &gt; 0) {'{'}<br/>
+                        &nbsp;&nbsp;jugarNivel();<br/>
+                        &nbsp;&nbsp;<span className="text-slate-500">// Si pierdes, vidas disminuye</span><br/>
+                        {'}'}<br/>
+                        console.log(<span className="text-green-400">"Game Over"</span>);
+                    </code>
+                </div>
+            </div>
+        </div>
       </header>
 
       <div className="grid lg:grid-cols-2 gap-6 flex-1 min-h-0">
@@ -117,12 +151,12 @@ const WhileLoop = () => {
         </div>
 
         {/* Visualization Column */}
-        <div className="flex flex-col bg-slate-900 rounded-xl overflow-hidden border border-slate-800 shadow-xl">
+        <div className="flex flex-col bg-secondary rounded-xl overflow-hidden border border-slate-800 shadow-xl">
           <div className="px-4 py-3 bg-slate-800/50 border-b border-slate-800">
             <span className="text-slate-300 font-medium text-sm">Verificación y Acción</span>
           </div>
           
-          <div className="flex-1 p-6 bg-slate-900/50 relative overflow-auto">
+          <div className="flex-1 p-6 bg-secondary/50 relative overflow-auto">
             {steps.length === 0 ? (
               <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-600">
                 <RotateCw size={48} className="mb-4 opacity-20" />

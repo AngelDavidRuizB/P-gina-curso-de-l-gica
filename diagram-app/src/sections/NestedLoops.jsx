@@ -75,7 +75,41 @@ const NestedLoops = () => {
           <span className="font-bold uppercase tracking-wider text-sm">Concepto 05</span>
         </div>
         <h2 className="text-3xl font-bold text-white mb-2">Ciclos Anidados</h2>
-        <p className="text-slate-400">Recorre estructuras de dos dimensiones (como una tabla).</p>
+        <p className="text-slate-400 mb-6">Recorre estructuras de dos dimensiones (como una tabla).</p>
+
+        <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 text-slate-300 space-y-4 shadow-lg">
+            <div>
+                <h3 className="text-xl font-semibold text-white mb-2">¿Qué son los Ciclos Anidados?</h3>
+                <p className="leading-relaxed">
+                    Es simplemente poner un ciclo dentro de otro. Imagina un reloj: por cada hora que pasa (ciclo externo), los minutos tienen que dar una vuelta completa de 0 a 59 (ciclo interno).
+                </p>
+            </div>
+            
+            <div>
+                <p className="leading-relaxed">
+                    Son fundamentales para trabajar con datos en dos dimensiones, como una hoja de cálculo (filas y columnas), un tablero de ajedrez o una imagen (píxeles).
+                    El ciclo interno se ejecuta completamente por cada sola iteración del ciclo externo.
+                </p>
+            </div>
+
+            <div className="bg-slate-900/50 p-4 rounded-lg border border-slate-700/50">
+                <h4 className="font-medium text-white mb-3 flex items-center gap-2">
+                    <span className="w-1 h-6 bg-blue-500 rounded-full"></span>
+                    Ejemplo concreto: Tablas de multiplicar
+                </h4>
+                <div className="bg-slate-800 p-3 rounded border border-slate-700">
+                    <code className="text-sm block font-mono text-slate-300">
+                        <span className="text-purple-400">for</span> (let i = 1; i &lt;= 3; i++) {'{'}<br/>
+                        &nbsp;&nbsp;<span className="text-slate-500">// Ciclo externo (Tablas del 1 al 3)</span><br/>
+                        &nbsp;&nbsp;<span className="text-purple-400">for</span> (let j = 1; j &lt;= 10; j++) {'{'}<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-slate-500">// Ciclo interno (Multiplicador)</span><br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;console.log(i + " x " + j + " = " + (i*j));<br/>
+                        &nbsp;&nbsp;{'}'}<br/>
+                        {'}'}
+                    </code>
+                </div>
+            </div>
+        </div>
       </header>
 
       <div className="grid lg:grid-cols-2 gap-6 flex-1 min-h-0">
@@ -124,7 +158,7 @@ const NestedLoops = () => {
         </div>
 
         {/* Visualization Column */}
-        <div className="flex flex-col bg-slate-900 rounded-xl overflow-hidden border border-slate-800 shadow-xl">
+        <div className="flex flex-col bg-secondary rounded-xl overflow-hidden border border-slate-800 shadow-xl">
           <div className="px-4 py-3 bg-slate-800/50 border-b border-slate-800">
             <span className="text-slate-300 font-medium text-sm">Grid de Coordenadas</span>
           </div>

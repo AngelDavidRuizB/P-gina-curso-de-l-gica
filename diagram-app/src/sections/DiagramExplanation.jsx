@@ -5,30 +5,63 @@ const DiagramExplanation = () => {
   return (
     <div className="p-8 max-w-6xl mx-auto">
       <header className="mb-12 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-sm font-medium mb-4 border border-blue-500/20">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 border border-primary/20">
           <BookOpen size={14} />
           <span>Referencia Visual</span>
         </div>
         <h1 className="text-4xl font-bold text-white mb-4">
           ¿Qué es un Diagrama de Flujo?
         </h1>
-        <p className="text-lg text-slate-400 max-w-3xl mx-auto">
+        <p className="text-lg text-slate-400 max-w-3xl mx-auto mb-8">
           Es un lenguaje visual universal (Estándar ISO 5807) que permite representar algoritmos de forma gráfica. 
           Antes de escribir una sola línea de código, los programadores usan estos diagramas para planear la lógica.
         </p>
+
+        <div className="max-w-4xl mx-auto bg-slate-800/50 p-8 rounded-2xl border border-slate-700 text-left shadow-xl">
+            <h3 className="text-2xl font-bold text-white mb-4">¿Por qué son tan importantes?</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p className="text-slate-300 leading-relaxed mb-4">
+                        Imagina que quieres construir una casa. No empiezas poniendo ladrillos al azar; primero haces un <strong>plano</strong>. 
+                        Un diagrama de flujo es exactamente eso: el plano de tu programa.
+                    </p>
+                    <p className="text-slate-300 leading-relaxed">
+                        Te permite visualizar el camino que seguirán los datos, identificar posibles errores de lógica (bugs) antes de que ocurran 
+                        y comunicar tus ideas a otros programadores sin importar qué lenguaje de programación usen (Python, Java, C++, etc.).
+                    </p>
+                </div>
+                <div className="bg-slate-900/50 p-5 rounded-xl border border-slate-700/50">
+                    <h4 className="font-semibold text-white mb-3">Beneficios clave:</h4>
+                    <ul className="space-y-3 text-slate-400">
+                        <li className="flex items-start gap-2">
+                            <span className="text-green-400 mt-1">✓</span>
+                            <span><strong>Claridad:</strong> Convierte procesos complejos en pasos simples.</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                            <span className="text-green-400 mt-1">✓</span>
+                            <span><strong>Universalidad:</strong> Se entiende en cualquier idioma.</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                            <span className="text-green-400 mt-1">✓</span>
+                            <span><strong>Depuración:</strong> Ayuda a encontrar "callejones sin salida" en tu lógica.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
       </header>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         
         {/* Inicio / Fin */}
         <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:-translate-y-2 transition-transform duration-300 group">
-          <div className="h-32 bg-slate-50 border-b border-slate-100 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
-            <div className="px-6 py-2 bg-white border-2 border-slate-800 rounded-full font-bold text-slate-800 shadow-sm group-hover:scale-110 group-hover:shadow-blue-200 group-hover:border-blue-600 group-hover:text-blue-700 transition-all duration-300">
+          <div className="h-32 bg-slate-50 border-b border-slate-100 flex items-center justify-center group-hover:bg-primary/5 transition-colors">
+            <div className="px-6 py-2 bg-white border-2 border-slate-800 rounded-full font-bold text-slate-800 shadow-sm group-hover:scale-110 group-hover:shadow-primary/20 group-hover:border-primary group-hover:text-primary transition-all duration-300">
               INICIO
             </div>
           </div>
           <div className="p-6">
-            <span className="inline-block px-2 py-1 rounded-full bg-blue-100 text-blue-700 text-[10px] font-bold uppercase tracking-wider mb-3">
+            <span className="inline-block px-2 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider mb-3">
               Terminal
             </span>
             <h3 className="text-lg font-bold text-slate-800 mb-2">Inicio / Fin</h3>

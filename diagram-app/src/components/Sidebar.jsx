@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../assets/logo.jpeg';
 import { 
   Home, 
   Box, 
@@ -27,12 +28,13 @@ const menuItems = [
 
 const Sidebar = ({ activeSection, onNavigate }) => {
   return (
-    <aside className="w-64 bg-slate-900 border-r border-slate-800 flex flex-col h-screen fixed left-0 top-0 z-10">
-      <div className="p-6 border-b border-slate-800 flex items-center gap-3">
-        <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-          <span className="text-white font-bold text-xl">L</span>
-        </div>
-        <h1 className="text-white font-bold text-lg tracking-tight">Laboratorio</h1>
+    <aside className="w-64 bg-secondary border-r border-slate-800 flex flex-col h-screen fixed left-0 top-0 z-10">
+      <div className="h-24 border-b border-slate-800 flex items-center justify-center p-4 bg-black/20">
+        <img 
+          src={logo} 
+          alt="Logo Institucional" 
+          className="h-full w-auto object-contain drop-shadow-lg hover:scale-105 transition-transform duration-300 rounded-lg" 
+        />
       </div>
       
       <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-1">
@@ -46,7 +48,7 @@ const Sidebar = ({ activeSection, onNavigate }) => {
               onClick={() => onNavigate(item.id)}
               className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
                 isActive 
-                  ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/20' 
+                  ? 'bg-primary text-white shadow-lg shadow-primary/20' 
                   : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'
               }`}
             >

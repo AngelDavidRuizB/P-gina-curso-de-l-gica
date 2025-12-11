@@ -5,7 +5,7 @@ const NodeBase = "px-4 py-3 shadow-lg text-sm font-medium text-center min-w-[150
 
 export const StartEndNode = memo(({ data }) => {
   return (
-    <div className={`${NodeBase} rounded-full bg-gradient-to-r from-slate-700 to-slate-800 text-white border-2 border-slate-600`}>
+    <div className={`${NodeBase} rounded-full bg-gradient-to-r from-primary to-blue-600 text-white border-2 border-primary`}>
       <Handle type="target" position={Position.Top} className="!bg-transparent !border-none" />
       <span className="font-bold tracking-wide">{data.label}</span>
       <Handle type="source" position={Position.Bottom} className="!bg-transparent !border-none" />

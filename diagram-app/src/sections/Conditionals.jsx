@@ -67,7 +67,53 @@ const Conditionals = () => {
           <span className="font-bold uppercase tracking-wider text-sm">Concepto 02</span>
         </div>
         <h2 className="text-3xl font-bold text-white mb-2">Condicionales</h2>
-        <p className="text-slate-400">Entiende cómo los programas toman decisiones (If / Else).</p>
+        <p className="text-slate-400 mb-6">Entiende cómo los programas toman decisiones (If / Else).</p>
+
+        <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 text-slate-300 space-y-4 shadow-lg">
+            <div>
+                <h3 className="text-xl font-semibold text-white mb-2">¿Qué son los condicionales?</h3>
+                <p className="leading-relaxed">
+                    En la vida real, tomamos decisiones todo el tiempo basándonos en situaciones: "Si llueve, llevo paraguas", "Si tengo hambre, como algo". 
+                    Los condicionales permiten que nuestros programas hagan exactamente lo mismo: tomar decisiones.
+                </p>
+            </div>
+            
+            <div>
+                <p className="leading-relaxed">
+                    La estructura más común es el <strong>if / else</strong> (si / si no). Funciona como una bifurcación en el camino: 
+                    el programa evalúa una pregunta (condición) que puede ser verdadera o falsa. Si es verdadera, toma un camino; si es falsa, puede tomar otro.
+                </p>
+            </div>
+
+            <div className="bg-slate-900/50 p-4 rounded-lg border border-slate-700/50">
+                <h4 className="font-medium text-white mb-3 flex items-center gap-2">
+                    <span className="w-1 h-6 bg-blue-500 rounded-full"></span>
+                    Ejemplos concretos:
+                </h4>
+                <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-slate-800 p-3 rounded border border-slate-700">
+                        <div className="text-xs text-slate-500 uppercase mb-1 font-bold">Ejemplo 1: Clima</div>
+                        <code className="text-sm block font-mono">
+                            <span className="text-purple-400">if</span> (estaLloviendo) {'{'}<br/>
+                            &nbsp;&nbsp;usarParaguas();<br/>
+                            {'}'} <span className="text-purple-400">else</span> {'{'}<br/>
+                            &nbsp;&nbsp;usarGafasDeSol();<br/>
+                            {'}'}
+                        </code>
+                    </div>
+                    <div className="bg-slate-800 p-3 rounded border border-slate-700">
+                        <div className="text-xs text-slate-500 uppercase mb-1 font-bold">Ejemplo 2: Acceso</div>
+                        <code className="text-sm block font-mono">
+                            <span className="text-purple-400">if</span> (edad &gt;= 18) {'{'}<br/>
+                            &nbsp;&nbsp;permitirEntrada();<br/>
+                            {'}'} <span className="text-purple-400">else</span> {'{'}<br/>
+                            &nbsp;&nbsp;denegarEntrada();<br/>
+                            {'}'}
+                        </code>
+                    </div>
+                </div>
+            </div>
+        </div>
       </header>
 
       <div className="grid lg:grid-cols-2 gap-6 flex-1 min-h-0">
@@ -116,12 +162,12 @@ const Conditionals = () => {
         </div>
 
         {/* Visualization Column */}
-        <div className="flex flex-col bg-slate-900 rounded-xl overflow-hidden border border-slate-800 shadow-xl">
+        <div className="flex flex-col bg-secondary rounded-xl overflow-hidden border border-slate-800 shadow-xl">
           <div className="px-4 py-3 bg-slate-800/50 border-b border-slate-800">
             <span className="text-slate-300 font-medium text-sm">Flujo del Programa</span>
           </div>
           
-          <div className="flex-1 p-6 bg-slate-900/50 relative overflow-auto flex items-center justify-center">
+          <div className="flex-1 p-6 bg-secondary/50 relative overflow-auto flex items-center justify-center">
             {!executionStep ? (
               <div className="flex flex-col items-center justify-center text-slate-600">
                 <Split size={48} className="mb-4 opacity-20" />
@@ -138,7 +184,7 @@ const Conditionals = () => {
                 <div className="h-8 w-0.5 bg-slate-600"></div>
 
                 {/* Condition Label */}
-                <div className="text-xs text-slate-400 mb-1 font-mono bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
+                <div className="text-xs text-slate-400 mb-1 font-mono bg-secondary px-2 py-0.5 rounded border border-slate-800">
                   {conditionText}
                 </div>
 

@@ -66,7 +66,41 @@ const Functions = () => {
           <span className="font-bold uppercase tracking-wider text-sm">Concepto 07</span>
         </div>
         <h2 className="text-3xl font-bold text-white mb-2">Funciones</h2>
-        <p className="text-slate-400">Crea tus propias herramientas reutilizables.</p>
+        <p className="text-slate-400 mb-6">Crea tus propias herramientas reutilizables.</p>
+
+        <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700 text-slate-300 space-y-4 shadow-lg">
+            <div>
+                <h3 className="text-xl font-semibold text-white mb-2">¿Qué es una Función?</h3>
+                <p className="leading-relaxed">
+                    Imagina que tienes una receta de cocina para hacer un pastel. No necesitas reinventar la receta cada vez que quieres un pastel; simplemente sigues las instrucciones.
+                    Una <strong>Función</strong> es como esa receta: un bloque de código que realiza una tarea específica y que puedes usar (llamar) tantas veces como quieras.
+                </p>
+            </div>
+            
+            <div>
+                <p className="leading-relaxed">
+                    Las funciones te ayudan a no repetir código, hacer tus programas más ordenados y fáciles de entender. Pueden recibir ingredientes (parámetros) y devolver un resultado (return).
+                </p>
+            </div>
+
+            <div className="bg-slate-900/50 p-4 rounded-lg border border-slate-700/50">
+                <h4 className="font-medium text-white mb-3 flex items-center gap-2">
+                    <span className="w-1 h-6 bg-blue-500 rounded-full"></span>
+                    Ejemplo concreto:
+                </h4>
+                <div className="bg-slate-800 p-3 rounded border border-slate-700">
+                    <div className="text-xs text-slate-500 uppercase mb-1 font-bold">Calculadora simple</div>
+                    <code className="text-sm block font-mono text-slate-300">
+                        <span className="text-slate-500">// Definición de la función (La receta)</span><br/>
+                        <span className="text-purple-400">function</span> sumar(a, b) {'{'}<br/>
+                        &nbsp;&nbsp;<span className="text-purple-400">return</span> a + b;<br/>
+                        {'}'}<br/><br/>
+                        <span className="text-slate-500">// Uso de la función (Cocinar)</span><br/>
+                        let resultado = sumar(5, 3); <span className="text-slate-500">// resultado es 8</span>
+                    </code>
+                </div>
+            </div>
+        </div>
       </header>
 
       <div className="grid lg:grid-cols-2 gap-6 flex-1 min-h-0">
@@ -115,12 +149,12 @@ const Functions = () => {
         </div>
 
         {/* Visualization Column */}
-        <div className="flex flex-col bg-slate-900 rounded-xl overflow-hidden border border-slate-800 shadow-xl">
+        <div className="flex flex-col bg-secondary rounded-xl overflow-hidden border border-slate-800 shadow-xl">
           <div className="px-4 py-3 bg-slate-800/50 border-b border-slate-800">
             <span className="text-slate-300 font-medium text-sm">Máquina de Procesamiento</span>
           </div>
           
-          <div className="flex-1 p-6 bg-slate-900/50 relative overflow-auto space-y-6">
+          <div className="flex-1 p-6 bg-secondary/50 relative overflow-auto space-y-6">
             {calls.length === 0 ? (
               <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-600">
                 <FunctionSquare size={48} className="mb-4 opacity-20" />
