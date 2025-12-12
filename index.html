@@ -16,7 +16,7 @@
             <nav class="nav">
                 <button class="nav-btn active" data-target="inicio">Inicio</button>
                 <button class="nav-btn" data-target="variables">1. Variables</button>
-                <button class="nav-btn" data-target="condicionales">2. Condicionales</button>
+
                 <button class="nav-btn" data-target="for">3. Ciclo For</button>
                 <button class="nav-btn" data-target="while">4. Ciclo While</button>
                 <button class="nav-btn" data-target="anidados">5. Ciclos Anidados</button>
@@ -94,35 +94,7 @@ crearVariable("tieneEspada", tieneEspada);
                 </div>
             </section>
 
-            <!-- SECCIÓN 2: CONDICIONALES -->
-            <section class="panel hidden" id="condicionales" data-section>
-                <div class="panel-header">
-                    <div>
-                        <p class="eyebrow">Concepto 02</p>
-                        <h2>Condicionales (if/else)</h2>
-                        <p class="hint">El código toma decisiones basadas en preguntas (verdadero o falso).</p>
-                    </div>
-                    <button class="btn run-btn" data-run="condicionales">▶ Ejecutar</button>
-                </div>
-                <div class="panel-body">
-                    <div class="editor">
-                        <label for="code-condicionales">Código JavaScript</label>
-                        <textarea id="code-condicionales" class="code" spellcheck="false">let energia = 80;
 
-// Cambia el valor de energia para ver el otro camino
-if (energia > 50) {
-    animarCondicional(true, "energia > 50");
-} else {
-    animarCondicional(false, "energia > 50");
-}
-</textarea>
-                    </div>
-                    <div class="visual" id="visual-condicionales">
-                        <div class="viz-title">Flujo de Decisión</div>
-                        <div class="viz-area" data-visual="condicionales"></div>
-                    </div>
-                </div>
-            </section>
 
             <!-- SECCIÓN 3: CICLO FOR -->
             <section class="panel hidden" id="for" data-section>
